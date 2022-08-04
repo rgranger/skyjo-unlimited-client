@@ -1,13 +1,18 @@
-<script>
+<script lang="ts">
+	import Paper, { Title, Subtitle, Content } from '@smui/paper';
 	import Button from '@smui/button';
 
 	const handleCreateRoom = () => {
 		console.log('create room');
 	};
+
+	const handleJoinRoom = () => {
+		console.log('join room');
+	};
 </script>
 
-<main class="flex flex-col">
-	<h1 class="text-8xl text-center mb-8">
+<main class="h-screen flex flex-col p-10">
+	<h1 class="text-8xl text-center">
 		<span class="text-red-500">S</span>
 		<span class="text-yellow-500">K</span>
 		<span class="text-green-500">Y</span>
@@ -25,8 +30,10 @@
 		<span class="text-cyan-500">D</span>
 	</h1>
 
-	<div>
-		<Button on:click={handleCreateRoom} variant="raised">Create Room</Button>
-		<Button on:click={handleCreateRoom} variant="raised" disabled>Join Room</Button>
+	<div class="flex-1 flex justify-center	items-center">
+		<Paper class="flex-1 flex flex-col max-w-lg">
+			<Button class="mb-2" on:click={handleCreateRoom} variant="raised">Create Room</Button>
+			<Button on:click={handleJoinRoom} variant="raised" disabled>Join Room</Button>
+		</Paper>
 	</div>
 </main>
