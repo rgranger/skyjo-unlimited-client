@@ -1,11 +1,9 @@
 <script>
 	import '../app.css';
+	import { init } from '$lib/ws';
 	import { onMount } from 'svelte';
-	import { connect } from '$lib/ws';
 
-	onMount(async () => {
-		connect();
-	});
+	onMount(init);
 </script>
 
 <slot />

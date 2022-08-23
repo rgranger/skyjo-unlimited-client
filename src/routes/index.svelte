@@ -1,9 +1,10 @@
 <script lang="ts">
 	import Paper, { Title, Subtitle, Content } from '@smui/paper';
 	import Button from '@smui/button';
+	import { send } from '$lib/ws';
 
 	const handleCreateRoom = () => {
-		console.log('create room');
+		send({ type: 'CreateRoom' });
 	};
 
 	const handleJoinRoom = () => {
